@@ -1,0 +1,43 @@
+{
+  "dependencies": {
+    "unused-because-wordpress.js": {
+      "bower": ["jquery"]
+    },
+    "libs.min.js": {
+      "main": true
+    },
+    "libs.min.css": {
+      "main": true
+    },
+    "main.min.js": {
+      "files": [
+        "scripts/main.js"
+      ]
+    },
+    "main.min.css": {
+      "files": [
+        "styles/main.scss"
+      ]
+    },
+    "login.min.css": {
+      "files": [
+        "styles/login.scss"
+      ]
+    },
+    "editor-style.min.css": {
+      "files": [
+        "styles/editor-style.scss"
+      ]
+    },
+    "admin.min.css": {
+      "files": [
+        "styles/admin.scss"
+      ]
+    },
+    "print.min.css": {
+      "files": [
+        "styles/print.scss"
+      ]
+    }
+  }
+}

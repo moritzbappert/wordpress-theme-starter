@@ -1,0 +1,16 @@
+{
+  "name": "template-theme",
+  "homepage": "http://www.netzstrategen.com/",
+  "authors": [
+    "netzstrategen <hallo@netzstrategen.com>"
+  ],
+  "license": "MIT",
+  "overrides": {
+    "normalize-css": {
+      "main": "./normalize.css"
+    }
+  },
+  "dependencies": {
+    "normalize-css": "^5.0.0"
+  }
+}

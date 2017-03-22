@@ -71,7 +71,7 @@ class Theme {
       $git_version = substr($ref, 0, 8);
     }
 
-    wp_enqueue_style('theme/main', static::getBaseUrl() . '/dist/styles/libs.min.css', FALSE, $git_version);
+    wp_enqueue_style('theme/libs', static::getBaseUrl() . '/dist/styles/libs.min.css', FALSE, $git_version);
     wp_enqueue_style('theme/main', static::getBaseUrl() . '/dist/styles/main.min.css', FALSE, $git_version);
     wp_enqueue_style('theme/print', static::getBaseUrl() . '/dist/styles/print.min.css', FALSE, $git_version, 'print');
 

@@ -1,0 +1,85 @@
+// =============================================================================
+// #buttons
+// =============================================================================
+.btn {
+  border: 0;
+  font-weight: 700;
+  font-family: $font-family-sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: $grey;
+  background-color: $grey-light;
+
+  i {
+    margin-left: 15px;
+  }
+}
+
+.btn--primary {
+  background-color: $blue;
+  color: $white;
+}
+
+.btn--right {
+  float: right;
+}
+
+.btn--left {
+  float: left;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.btn--block + .btn--block {
+  margin-top: 15px;
+}
+
+// =============================================================================
+// #alerts
+// =============================================================================
+.alert {
+  display: block;
+  padding: 10px 15px;
+  background-color: $grey-light;
+  border: 1px solid lighten($grey, 20%);
+  color: $grey-dark;
+}
+
+.page-overview {
+
+  > .article {
+
+    p.highlight {
+      text-align: center;
+      font-size: 26px;
+      color: $blue;
+    }
+
+    .article__content {
+      display: flex;
+    }
+
+    .article__body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article__excerpt {
+      flex: 1 0 auto;
+    }
+
+    .btn {
+      margin-top: 5%;
+      align-self: center;
+    }
+  }
+}

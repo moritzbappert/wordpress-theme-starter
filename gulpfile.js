@@ -4,9 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var changed = require('gulp-changed');
 var concat = require('gulp-concat');
-var csscomb = require('gulp-csscomb');
 var eol = require('gulp-eol');
-var flatten = require('gulp-flatten');
 var gulp = require('gulp');
 var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
@@ -19,7 +17,6 @@ var plumber = require('gulp-plumber');
 var rev = require('gulp-rev');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
-var sassLint = require('gulp-sass-lint');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
@@ -74,26 +71,6 @@ var revManifest = path.dist + 'assets.json';
 // ## Reusable Pipelines
 // See https://github.com/OverZealous/lazypipe
 
-// ### CSScomb
-// `gulp csscomb` - Sort CSS rules to follow SMACSS properties order.
-// Settings can be changed on .csscomb.json file.
-gulp.task('csscomb', function() {
-  return gulp.src('./assets/styles/**/*.scss')
-    .pipe(csscomb())
-    .pipe(gulp.dest('./assets/styles'));
-});
-
-// ### Sass Lint
-// `gulp sassLint` - Lints SCSS files.
-gulp.task('sasslint', function () {
-  return gulp.src('./assets/styles/**/*.scss')
-    .pipe(sassLint({
-      configFile: '.sass-lint.yml'
-    }))
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
-});
-
 // ### CSS processing pipeline
 // Example
 // ```
@@ -128,10 +105,10 @@ var cssTasks = function(filename) {
         'opera 12'
       ]
     })
-    .pipe(minifyCss, {
-      advanced: false,
-      rebase: false
-    })
+//    .pipe(minifyCss, {
+//      advanced: false,
+//      rebase: false
+//    })
     .pipe(function() {
       return gulpif(enabled.rev, rev());
     })
@@ -198,7 +175,7 @@ var writeToManifest = function(directory) {
 // `gulp styles` - Compiles, combines, and optimizes Bower CSS and project CSS.
 // By default this task will only log a warning if a precompiler error is
 // raised. If the `--production` flag is set: this task will fail outright.
-gulp.task('styles', ['csscomb', 'sasslint', 'wiredep'], function() {
+gulp.task('styles', ['wiredep'], function() {
   var merged = mergeStream();
   manifest.forEachDependency('css', function(dep) {
     var cssTasksInstance = cssTasks(dep.name);
@@ -212,7 +189,7 @@ gulp.task('styles', ['csscomb', 'sasslint', 'wiredep'], function() {
       .pipe(cssTasksInstance));
   });
   return merged
-    .pipe(eol())
+    .pipe(eol('\n'))
     .pipe(writeToManifest('styles'));
 });
 
@@ -228,16 +205,14 @@ gulp.task('scripts', ['jshint'], function() {
     );
   });
   return merged
-    .pipe(eol())
+    .pipe(eol('\n'))
     .pipe(writeToManifest('scripts'));
 });
 
 // ### Fonts
-// `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
-// structure. See: https://github.com/armed/gulp-flatten
+// `gulp fonts` - Grabs all the fonts and outputs them in dist folder.
 gulp.task('fonts', function() {
   return gulp.src(globs.fonts)
-    .pipe(flatten())
     .pipe(gulp.dest(path.dist + 'fonts'))
     .pipe(browserSync.stream());
 });
@@ -251,6 +226,7 @@ gulp.task('images', function() {
       interlaced: true,
       svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
     }))
+    .pipe(gulpif('*.svg', eol('\n')))
     .pipe(gulp.dest(path.dist + 'images'))
     .pipe(browserSync.stream());
 });
@@ -277,7 +253,7 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // build step for that asset and inject the changes into the page.
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
-  gulp.watch([path.source + 'styles/**/*'], ['csscomb', 'sasslint', 'styles']);
+  gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);

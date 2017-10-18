@@ -1,0 +1,127 @@
+// =============================================================================
+// #basic
+// =============================================================================
+::selection {
+  background-color: $blue;
+  color: $blue-light;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  background-color: $grey-lighter;
+  @media screen { overflow-x: hidden; }
+}
+
+iframe {
+  border: 0;
+  max-width: 100%;
+}
+
+article {
+
+  h1, h2 {
+    word-break: break-word;
+  }
+}
+
+figure {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color ease .4s, background-color ease .4s;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.33rem; }
+h4 { font-size: 1.17rem; }
+h5 { font-size: 1.08rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin: 0 0 1em 0;
+  line-height: 1.6;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: $grey-light;
+  margin: 50px 0;
+}
+
+address {
+  font-style: normal;
+}
+
+abbr[title] {
+  border-bottom: 0;
+}
+
+// =============================================================================
+// #helper
+// =============================================================================
+.sr-only,
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// =============================================================================
+// #IE10+ fixes
+// =============================================================================
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+  img[src$=".svg"] {
+    width: 100%;
+  }
+}

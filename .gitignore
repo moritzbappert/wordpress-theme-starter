@@ -1,4 +1,9 @@
-bower_components
-node_modules/*
-npm-debug.log
-dist/**/*.map
+/bower_components
+!/bower_components/headroom.js/dist/headroom.min.js
+!/bower_components/headroom.js/dist/jQuery.headroom.min.js
+!/bower_components/modernizr/modernizr.js
+!/bower_components/normalize-css/normalize.css
+#/dist
+/dist/**/*.map
+/node_modules
+/npm-debug.log

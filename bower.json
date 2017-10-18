@@ -1,16 +1,27 @@
 {
-  "name": "template-theme",
-  "homepage": "http://www.netzstrategen.com/",
+  "name": "starter",
+  "homepage": "https://github.com/netzstrategen/wordpress-theme-starter",
   "authors": [
     "netzstrategen <hallo@netzstrategen.com>"
   ],
-  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "headroom.js": "0.7.0",
+    "modernizr": "2.8.2",
+    "normalize-css": "^5.0.0"
+  },
   "overrides": {
+    "headroom.js": {
+      "main": [
+        "./dist/headroom.min.js",
+        "./dist/jQuery.headroom.min.js"
+      ]
+    },
+    "modernizr": {
+      "main": "./modernizr.js"
+    },
     "normalize-css": {
       "main": "./normalize.css"
     }
-  },
-  "dependencies": {
-    "normalize-css": "^5.0.0"
   }
 }

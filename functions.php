@@ -1,6 +1,6 @@
 <?php
 
-namespace TemplateTheme\Theme;
+namespace Starter\Theme;
 
 if (!defined('ABSPATH')) {
   header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
@@ -22,7 +22,7 @@ function classloader($class) {
 spl_autoload_register(__NAMESPACE__ . '\classloader');
 
 // Another plugin hooks into after_setup_theme priority 10 so some filters
-//   not apply correctly - e.g. the WooCommerce image size filters.
+// not apply correctly - e.g. the WooCommerce image size filters.
 add_action('after_setup_theme', __NAMESPACE__ . '\Theme::after_setup_theme', 9);
 add_action('init', __NAMESPACE__ . '\Theme::init');
 add_action('admin_init', __NAMESPACE__ . '\Admin::init');

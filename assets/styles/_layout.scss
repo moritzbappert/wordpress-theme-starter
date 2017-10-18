@@ -1,0 +1,199 @@
+// =============================================================================
+// #site-wrapper
+// =============================================================================
+.site-wrapper {
+  max-width: $site-width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  box-shadow: 0px 0px 10px 0px rgba(150, 150, 150, 0.2);
+}
+
+// =============================================================================
+// #container
+// =============================================================================
+@mixin container() {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+    padding: 0;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+.container {
+  @include container();
+}
+
+.document .container {
+  padding: 0;
+}
+
+.archive .main,
+.page .main {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+
+.container--flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 0;
+
+  .first-row,
+  .col-left,
+  .col-right {
+    flex: none;
+    flex-grow: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    flex-direction: row;
+
+    .first-row {
+      width: 100%;
+    }
+
+    .col-left {
+      width: 67%;
+    }
+
+    .col-right {
+      width: 33%;
+      padding-left: 15px;
+    }
+  }
+}
+
+// =============================================================================
+// #show/hide
+// =============================================================================
+// copied from bootstrap
+// @see https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: $screen-xs-max) {
+  .visible-xs,
+  .visible-xs-block {
+    display: block !important;
+  }
+
+  .visible-xs-inline {
+    display: inline !important;
+  }
+
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .visible-sm,
+  .visible-sm-block {
+    display: block !important;
+  }
+
+  .visible-sm-inline {
+    display: inline !important;
+  }
+
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .visible-md,
+  .visible-md-block {
+    display: block !important;
+  }
+
+  .visible-md-inline {
+    display: inline !important;
+  }
+
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .visible-lg,
+  .visible-lg-block {
+    display: block !important;
+  }
+
+  .visible-lg-inline {
+    display: inline !important;
+  }
+
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+// Hide element for not logged in users.
+body:not(.logged-in) .hide {
+  display: none !important;
+}

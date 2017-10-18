@@ -3,38 +3,43 @@
     "unused-because-wordpress.js": {
       "bower": ["jquery"]
     },
-    "libs.min.js": {
+    "libs.js": {
+      "files": [
+        "scripts/libs.js"
+      ],
       "main": true
     },
-    "libs.min.css": {
-      "main": true
-    },
-    "main.min.js": {
+    "main.js": {
       "files": [
         "scripts/main.js"
-      ]
+      ],
+      "config": {
+        "uglify": {
+          "mangle": false,
+          "output": {
+            "beautify": true
+          },
+          "compress": false
+        }
+      }
     },
-    "main.min.css": {
+    "main.css": {
       "files": [
         "styles/main.scss"
-      ]
+      ],
+      "main": true
     },
-    "login.min.css": {
+    "login.css": {
       "files": [
         "styles/login.scss"
       ]
     },
-    "editor-style.min.css": {
+    "editor-style.css": {
       "files": [
         "styles/editor-style.scss"
       ]
     },
-    "admin.min.css": {
-      "files": [
-        "styles/admin.scss"
-      ]
-    },
-    "print.min.css": {
+    "print.css": {
       "files": [
         "styles/print.scss"
       ]

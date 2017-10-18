@@ -1,0 +1,53 @@
+@media print {
+  @page {
+    margin: 2cm;
+  }
+  html {
+    margin: 0 !important;
+    padding: 0;
+  }
+  html > body {
+    padding: 0 !important;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    background-color: #fff;
+    padding: 0 !important;
+    margin: 0;
+  }
+  body, body > *,
+  .main .container--flex,
+  .main .container--flex > * {
+    display: block !important;
+  }
+  header, h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  img, .home .article {
+    page-break-inside: avoid;
+  }
+  style,
+  script,
+  #wpadminbar,
+  #cookieChoiceInfo,
+  .beta,
+  .modal,
+  .site-bar-top,
+  .site-header,
+  .site-footer,
+  .home .section--first .tabs,
+  .author__image,
+  .author__posts,
+  .article__sharing,
+  .article__related,
+  #comments,
+  .ad,
+  .paywall,
+  .main aside,
+  .main aside.col-right,
+  iframe {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=print.css.map */

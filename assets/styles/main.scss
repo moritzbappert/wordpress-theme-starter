@@ -1,1 +1,10 @@
-@import 'config';
+@import "../../bower_components/normalize-css/normalize";
+@import "_config";
+@import "mixins";
+@import "placeholders";
+@import "base";
+@import "fonts";
+@import "icons";
+@import "layout";
+@import "header";
+@import "content";

@@ -1,0 +1,658 @@
+// =============================================================================
+//    Header
+// =============================================================================
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  min-height: 60px;
+  max-width: $site-width;
+  background-color: $white;
+
+  @media screen and (min-width: $screen-lg-min) {
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  // Logo ----------------------------------------------------------------------
+  .site-logo {
+    display: block;
+    margin: 0 15%;
+
+    @media screen and (min-width: $screen-lg-min) {
+      order: 3;
+      flex: 1 0 100%;
+      margin: 0;
+    }
+
+    img {
+      transition: all ease .4s;
+      width: 100%;
+      max-width: 225px;
+      margin: 15px auto;
+      box-sizing: content-box;
+
+      @media screen and (min-width: $screen-lg-min) {
+        max-width: 580px;
+        margin: 30px auto;
+      }
+    }
+  }
+
+  // Search --------------------------------------------------------------------
+  .search-button {
+    display: none;
+    position: relative;
+    min-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+    background-color: $blue;
+    cursor: pointer;
+
+    @media screen and (min-width: $screen-lg-min) {
+      display: inline-block;
+      margin-left: 40px;
+    }
+
+    &:before {
+      @extend %icons;
+      font-size: 22px;
+      font-weight: 700;
+      color: $white;
+      position: absolute;
+      top: 5px;
+      left: 11px;
+      content: "\e807";
+    }
+  }
+
+  .search-form {
+    overflow: hidden;
+    background-color: transparent;
+
+    @media screen and (min-width: $screen-lg-min) {
+      display: none;
+      order: 5;
+      width: 100%;
+      background-color: $blue;
+      border-bottom: 1px solid darken($blue, 10%);
+    }
+
+    > .container {
+      display: flex;
+      flex: 1 0 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+
+      @media screen and (max-width: $screen-md-max) {
+        width: auto;
+        margin: 0 15px;
+      }
+
+      @media screen and (min-width: $screen-lg-min) {
+        height: 100px;
+      }
+    }
+  }
+
+  .search-form__field,
+  .search-form__field:focus,
+  .search-form__field:enabled,
+  .search-form__reset,
+  .search-form__submit {
+    background-color: rgba($white, 0.4);
+    outline: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    appearance: none;
+
+    @media screen and (min-width: $screen-lg-min) {
+      background-color: transparent;
+    }
+  }
+
+  .search-form__field {
+    width: 100%;
+    height: 50px;
+    color: $white;
+    font-size: 18px;
+    font-weight: 300;
+
+    @media screen and (min-width: $screen-lg-min) {
+      width: calc(100% - 40px);
+      margin-top: 5px;
+      font-size: 28px;
+    }
+
+    &:focus,
+    &:enabled {
+      padding-right: 10px;
+    }
+
+    &::-webkit-input-placeholder { color: rgba($white, 0.3); }
+    &::-moz-placeholder { color: rgba($white, 0.3); }
+    &:-moz-placeholder { color: rgba($white, 0.3); }
+    &:-ms-input-placeholder { color: rgba($white, 0.3); }
+    &::-ms-clear { visibility: hidden; }
+  }
+
+  .search-form__reset i {
+    display: none;
+
+    @media screen and (min-width: $screen-lg-min) {
+      display: block;
+      color: rgba($white, 0.5);
+      font-size: 46px;
+    }
+  }
+
+  .search-form__submit {
+    height: 50px;
+    padding: 0 15px 5px;
+
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 0;
+      margin-right: 20px;
+    }
+
+    i {
+      color: $white;
+      overflow: hidden;
+      max-width: 64px;
+      font-size: 36px;
+      line-height: 36px;
+
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 46px;
+      }
+    }
+  }
+}
+
+// Header expanded -------------------------------------------------------------
+.site-header__expanded {
+  height: 100%;
+  background: linear-gradient(to top, rgba(#00538d, .98), rgba($blue, .98));
+}
+
+// Headroom.js -----------------------------------------------------------------
+.site-header.headroom--pinned,
+.site-header.headroom--unpinned {
+  transition: all ease .4s;
+}
+
+.site-header.headroom--unpinned {
+  transform: translateY(-33px);
+}
+
+.site-header.headroom--not-top {
+
+  .site-logo img {
+    padding: 15px;
+
+    @media screen and (min-width: $screen-xs-min) {
+      max-width: 300px;
+      height: 35px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// WordPress admin bar fix -----------------------------------------------------
+.admin-bar .site-header {
+  top: 46px;
+  @media screen and (min-width: 783px) { top: 32px; }
+}
+
+#wpadminbar {
+  position: fixed;
+}
+
+// =============================================================================
+//    Navigation
+// =============================================================================
+.nav-primary,
+.nav-secondary {
+
+  @media screen and (min-width: $screen-lg-min) {
+    flex: 1 1 0%;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    line-height: 1;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  > ul > li > a {
+    display: inline-block;
+  }
+
+  .sub-menu {
+    display: none;
+  }
+}
+
+// =============================================================================
+//    Navigation primary
+// =============================================================================
+.nav-primary {
+  background: linear-gradient(to top, rgba($black, 0.2), transparent);
+
+  @media screen and (max-width: $screen-md-max) {
+    overflow-y: scroll;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    order: 4;
+    flex: 1 0 100%;
+    background: $white;
+  }
+
+  > ul {
+    padding: 15px;
+
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 100%;
+    }
+
+    li {
+      display: block;
+    }
+
+    .menu-item-has-children {
+      position: relative;
+    }
+
+    > li {
+      position: relative;
+      border-bottom: 1px solid rgba($white, 0.3);
+
+      @media screen and (min-width: $screen-lg-min) {
+        display: inline-block;
+        border-bottom: 0;
+      }
+
+      &:hover {
+
+        .nav-toggle:after {
+          @media screen and (min-width: $screen-lg-min) {
+            content: "\e80a";
+          }
+        }
+
+
+        > .sub-menu {
+          @media screen and (min-width: $screen-lg-min) {
+            display: block;
+          }
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      > a {
+        display: block;
+        padding: 15px 55px 15px 15px;
+
+        @media screen and (max-width: $screen-md-max) {
+          text-transform: uppercase;
+        }
+
+        @media screen and (min-width: $screen-lg-min) {
+          padding: 15px 25px;
+        }
+      }
+
+      .sub-menu {
+        @media screen and (min-width: $screen-lg-min) {
+          position: absolute;
+          background-color: $white;
+          border: 2px solid $blue;
+          width: 200px;
+        }
+      }
+
+      > .sub-menu {
+        padding: 10px 0;
+
+        @media screen and (max-width: $screen-md-max) {
+          border-top: 1px solid rgba($white, 0.3);
+          border-bottom: none;
+        }
+
+        @media screen and (min-width: $screen-lg-min) {
+          z-index: 9999;
+          top: 100%;
+          right: 0;
+          left: 0;
+          margin: 0;
+          text-align: left;
+          top: 100%;
+          left: 13px;
+        }
+
+        li {
+
+          a {
+            color: $white;
+            display: block;
+            font-size: 16px;
+            padding: 10px 15px;
+
+            @media screen and (min-width: $screen-lg-min) {
+              color: $black;
+            }
+          }
+
+          .sub-menu {
+            padding: 5px 0 20px;
+            margin: 0 15px;
+
+            @media screen and (min-width: $screen-lg-min) {
+              position: absolute;
+              top: -3px;
+              left: 100%;
+              padding: 5px 0;
+              margin: 0;
+            }
+
+            li a {
+              padding: 10px 15px;
+              font-size: 14px;
+
+              @media screen and (min-width: $screen-lg-min) {
+                padding: 8px 15px;
+              }
+            }
+          }
+        }
+
+        > .menu-item-has-children:hover > .sub-menu {
+          @media screen and (min-width: $screen-lg-min) {
+            display: block;
+          }
+        }
+
+        .nav-toggle {
+          right: 10px;
+          height: 35px;
+
+          &:after {
+            content: "\e80d";
+          }
+        }
+      }
+    }
+
+    a {
+      color: $white;
+      font-family: $font-family-sans-serif-alt;
+      font-size: 18px;
+      padding: 15px;
+
+      @media screen and (min-width: $screen-lg-min) {
+        color: $black;
+      }
+    }
+  }
+
+  .nav-toggle {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 48px;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    transition: transform ease .4s;
+
+    @media screen and (min-width: $screen-lg-min) {
+      right: 0;
+    }
+
+    &:after {
+      font-family: "icons";
+      content: "\e80b";
+      color: $white;
+
+      @media screen and (min-width: $screen-lg-min) {
+        color: $black;
+      }
+    }
+
+    &.expanded {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+// =============================================================================
+//    Navigation button
+// =============================================================================
+.nav-button {
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 22px;
+  width: 20px;
+  height: 16px;
+  outline: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  appearance: none;
+
+  @media screen and (min-width: $screen-lg-min) {
+    display: none;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $blue;
+    right: 0;
+    transform: rotate(0deg);
+    transition: ease-in-out 0.25s;
+    transform-origin: right center;
+
+    &:nth-child(1) { top: 0px; }
+    &:nth-child(2) { top: 7px; }
+    &:nth-child(3) { top: 14px; }
+  }
+}
+
+.nav-button--x span {
+  background-color: $white;
+
+  &:nth-child(1) { transform: rotate(-45deg); top: 1px; }
+  &:nth-child(2) { width: 0%; opacity: 0; }
+  &:nth-child(3) { transform: rotate(45deg); top: 15px; }
+}
+
+// =============================================================================
+//    Navigation secondary
+// =============================================================================
+.nav-secondary {
+  padding: 15px;
+
+  @media screen and (min-width: $screen-lg-min) {
+    order: 1;
+    flex: 1 0 auto;
+    padding: 0;
+  }
+
+  ul {
+    @media screen and (min-width: $screen-lg-min) {
+      text-align: right;
+    }
+  }
+
+  li {
+    display: none;
+
+    @media screen and (min-width: $screen-lg-min) {
+      display: inline-block;
+    }
+  }
+
+  li:last-child,
+  li:nth-last-child(2) {
+    display: inline-block;
+  }
+
+  // E-Paper button
+  li:last-child {
+    @media screen and (min-width: $screen-lg-min) {
+      background-color: $blue;
+    }
+
+    a {
+      padding-left: 10px;
+      padding-right: 30px;
+      color: $white;
+    }
+
+    &:before,
+    &:after {
+      font-family: "icons";
+      content: "\e808";
+      color: #6bb8ff;
+      font-size: 20px;
+    }
+
+    &:after {
+      display: none;
+      padding-right: 10px;
+
+      @media screen and (min-width: $screen-lg-min) {
+        display: inline-block;
+      }
+    }
+
+    &:before {
+      display: inline-block;
+
+      @media screen and (min-width: $screen-lg-min) {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    transition: all ease .4s;
+    color: $white;
+    font-size: 13px;
+    padding: 10px 24px 10px 0px;
+    line-height: 1;
+
+    @media screen and (min-width: $screen-lg-min) {
+      color: $black;
+    }
+  }
+}
+
+// =============================================================================
+//    Social buttons
+// =============================================================================
+.social-buttons {
+  width: 100%;
+  margin: 0;
+  padding: 25px 0;
+  background-color: transparent;
+  text-align: center;
+  list-style: none;
+
+  @media screen and (min-width: $screen-lg-min) {
+    order: 2;
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    padding: 2px 0 2px 10px;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    a {
+      width: 50px;
+      height: 50px;
+      color: $blue;
+      background-color: $white;
+      font-size: 24px;
+      line-height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      @media screen and (min-width: $screen-lg-min) {
+        width: 28px;
+        height: 28px;
+        color: $white;
+        background-color: $grey;
+        font-size: 18px;
+
+        &:hover {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
+//    Move element out of / into viewport
+// =============================================================================
+//    Reason of this is JS which is calculating heights of several elements
+//      so we can't set it simply to `display: none;` because the calculated
+//      result would be wrong.
+
+.move-out {
+  @media screen and (max-width: $screen-md-max) {
+    position: fixed;
+    top: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.move-in {
+  @media screen and (max-width: $screen-md-max) {
+    position: static;
+    top: auto;
+    transform: none;
+  }
+}

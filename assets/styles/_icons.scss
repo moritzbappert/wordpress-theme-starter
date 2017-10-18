@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.eot?95739667");
+  src: url("../fonts/icons.eot?95739667#iefix") format("embedded-opentype"),
+       url("../fonts/icons.woff?95739667") format("woff"),
+       url("../fonts/icons.ttf?95739667") format("truetype"),
+       url("../fonts/icons.svg?95739667#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%icons {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before { content: "\e800"; }
+.icon-twitter:before { content: "\e801"; }
+.icon-google-plus:before { content: "\e802"; }
+.icon-youtube:before { content: "\e803"; font-size: 22px; }
+.icon-instagram:before { content: "\f16d"; }
+.icon-gallery:before { content: "\e804"; }
+.icon-video:before { content: "\e805"; }
+.icon-play:before { content: "\e806"; }
+.icon-search:before { content: "\e807"; }
+.icon-login:before { content: "\e808"; }
+.icon-close:before { content: "\e809"; }
+.icon-angle-up:before { content: "\e80a"; }
+.icon-angle-down:before { content: "\e80b"; }
+.icon-angle-left:before { content: "\e80c"; }
+.icon-angle-right:before { content: "\e80d"; }
+.icon-arrow-left:before { content: "\e80e"; }
+.icon-arrow-right:before { content: "\e80f"; }
+.icon-arrow-up:before { content: "\e810"; }
+.icon-arrow-down:before { content: "\e811"; }
+.icon-power:before { content: "\e812"; }
+.icon-substitution:before { content: "\e815"; }
+.icon-soccer-ball:before { content: "\e816"; }

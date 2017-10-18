@@ -1,1 +1,26 @@
-@import 'config';
+@import "_config";
+@import "mixins";
+@import "placeholders";
+@import "base";
+@import "fonts";
+
+html {
+  background: initial;
+}
+.login #backtoblog a, .login #nav a, .login h1 a {
+  color: $link-color;
+}
+
+#login {
+  padding-top: 0;
+}
+#login h1 {
+  padding-top: 20%;
+}
+.login h1 a {
+  display: block;
+  background-image: url(../images/logo.svg);
+  background-size: 100%;
+  width: auto;
+  height: 50px;
+}

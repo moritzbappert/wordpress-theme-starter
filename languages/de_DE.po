@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: theme\n"
-"POT-Creation-Date: 2017-04-18 10:40+0200\n"
-"PO-Revision-Date: 2017-04-18 12:22+0200\n"
-"Last-Translator: Luca Pipolo <luca@netzstrategen.com>\n"
+"Project-Id-Version: starter\n"
+"POT-Creation-Date: 2017-10-19 14:04+0200\n"
+"PO-Revision-Date: 2017-10-19 14:07+0200\n"
+"Last-Translator: Daniel Kudwien <daniel@netzstrategen.com>\n"
 "Language-Team: netzstrategen\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -23,132 +23,87 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
 #: 404.php:6
-#| msgid "Page not Found"
 msgid "Page not found"
 msgstr ""
+
+#: 404.php:15 index.php:18 templates/header.php:26
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: 404.php:16 index.php:19 templates/header.php:28
+msgid "Search…"
+msgstr "Suche…"
+
+#: 404.php:17 index.php:20 templates/searchform.php:6
+msgid "Search"
+msgstr "Suche"
 
 #: author.php:17 index.php:25
 msgid "Sorry, no results were found."
 msgstr "Es tut uns Leid, aber es konnten keine Ergebnisse gefunden werden."
 
-#: index.php:18 templates/header.php:26
-msgid "Search for:"
-msgstr "Suche nach:"
-
-#: index.php:19 templates/header.php:28
-msgid "Search…"
-msgstr "Suche…"
-
-#: index.php:20 src/Theme.php:318 templates/searchform.php:6
-msgid "Search"
-msgstr "Suche"
-
-#: src/Admin.php:167 src/Admin.php:168
+#: src/Admin.php:168 src/Admin.php:169
 msgid "Post Thumbnail"
 msgstr ""
 
-#: src/Admin.php:168
+#: src/Admin.php:169
 msgid "(uncropped)"
 msgstr ""
 
-#: src/Article.php:43
+#: src/Article.php:29
 msgid "Read more"
 msgstr ""
 
-#: src/Login.php:51
-msgid "Profile"
-msgstr "Profil"
-
-#: src/Login.php:58
-msgid "Log in"
-msgstr ""
-
-#: src/Login.php:65
-msgid "Log out"
-msgstr ""
-
-#: src/Login.php:72 templates/paywall-login.php:17
-msgid "Lost your password?"
-msgstr ""
-
-#: src/Sports.php:48
-msgid "previous matchday"
-msgstr "vorheriger Spieltag"
-
-#: src/Sports.php:51
-msgid "next matchday"
-msgstr "nächster Spieltag"
-
-#: src/Theme.php:86
+#: src/Theme.php:70
 msgid "Primary Navigation"
 msgstr ""
 
-#: src/Theme.php:87
+#: src/Theme.php:71
 msgid "Secondary Navigation"
 msgstr ""
 
-#: src/Theme.php:88
+#: src/Theme.php:72
 msgid "Footer Left"
 msgstr ""
 
-#: src/Theme.php:89
+#: src/Theme.php:73
 msgid "Footer Right"
 msgstr ""
 
-#: src/Theme.php:167
+#: src/Theme.php:90
 msgid "Primary"
 msgstr ""
 
-#: src/Theme.php:175
+#: src/Theme.php:98
 msgid "Main (Top)"
 msgstr ""
 
-#: src/Theme.php:183
+#: src/Theme.php:106
 msgid "Main (Bottom)"
 msgstr ""
 
-#: src/Theme.php:191
-msgid "Article (Aside)"
-msgstr ""
-
-#: src/Theme.php:199
-msgid "Article (Footer)"
-msgstr ""
-
-#: src/Theme.php:207
-msgid "Frontpage (Products)"
-msgstr ""
-
-#: src/Theme.php:215
-msgid "Page overview"
-msgstr ""
-
-#: src/Theme.php:357
+#: src/Theme.php:170
 msgid "Expand child menu"
 msgstr ""
 
-#: src/Theme.php:358
+#: src/Theme.php:171
 msgid "Collapse child menu"
 msgstr ""
 
-#: src/Theme.php:405
+#: src/Theme.php:212
 msgid "Latest Posts"
 msgstr ""
 
-#: src/Theme.php:411
+#: src/Theme.php:218
 #, php-format
 msgid "Search Results for &ldquo;%s&rdquo;"
 msgstr "Suchergebnisse für &ldquo;%s&rdquo;"
 
-#: templates/article-gallery.php:58
-msgid "Back to overview"
-msgstr "zurück zur Üœbersicht"
-
-#: templates/article-office.php:97 templates/article.php:130
+#: templates/article.php:133
 msgid "Share:"
 msgstr "Teilen:"
 
-#: templates/article.php:141
+#: templates/article.php:144
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
@@ -164,18 +119,6 @@ msgstr ""
 #: templates/comments.php:31
 msgid "Comments are closed."
 msgstr "Kommentare sind geschlossen."
-
-#: templates/paywall-login.php:8
-msgid "Username"
-msgstr ""
-
-#: templates/paywall-login.php:12
-msgid "Password"
-msgstr ""
-
-#: templates/paywall-login.php:25
-msgid "Login"
-msgstr ""
 
 #: templates/searchform.php:5
 msgid "Search for"

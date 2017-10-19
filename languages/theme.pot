@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: starter\n"
-"POT-Creation-Date: 2017-10-18 20:20+0200\n"
+"POT-Creation-Date: 2017-10-19 14:03+0200\n"
 "PO-Revision-Date: 2015-06-18 14:18+0100\n"
 "Language-Team: netzstrategen\n"
 "MIME-Version: 1.0\n"
@@ -26,14 +26,100 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: 404.php:15
+#: 404.php:15 index.php:18 templates/header.php:26
 msgid "Search for:"
 msgstr ""
 
-#: 404.php:16
+#: 404.php:16 index.php:19 templates/header.php:28
 msgid "Search…"
 msgstr ""
 
-#: 404.php:17
+#: 404.php:17 index.php:20 templates/searchform.php:6
 msgid "Search"
+msgstr ""
+
+#: author.php:17 index.php:25
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: src/Admin.php:168 src/Admin.php:169
+msgid "Post Thumbnail"
+msgstr ""
+
+#: src/Admin.php:169
+msgid "(uncropped)"
+msgstr ""
+
+#: src/Article.php:29
+msgid "Read more"
+msgstr ""
+
+#: src/Theme.php:70
+msgid "Primary Navigation"
+msgstr ""
+
+#: src/Theme.php:71
+msgid "Secondary Navigation"
+msgstr ""
+
+#: src/Theme.php:72
+msgid "Footer Left"
+msgstr ""
+
+#: src/Theme.php:73
+msgid "Footer Right"
+msgstr ""
+
+#: src/Theme.php:90
+msgid "Primary"
+msgstr ""
+
+#: src/Theme.php:98
+msgid "Main (Top)"
+msgstr ""
+
+#: src/Theme.php:106
+msgid "Main (Bottom)"
+msgstr ""
+
+#: src/Theme.php:170
+msgid "Expand child menu"
+msgstr ""
+
+#: src/Theme.php:171
+msgid "Collapse child menu"
+msgstr ""
+
+#: src/Theme.php:212
+msgid "Latest Posts"
+msgstr ""
+
+#: src/Theme.php:218
+#, php-format
+msgid "Search Results for &ldquo;%s&rdquo;"
+msgstr ""
+
+#: templates/article.php:133
+msgid "Share:"
+msgstr ""
+
+#: templates/article.php:144
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: templates/comments.php:20
+msgid "&larr; Older comments"
+msgstr ""
+
+#: templates/comments.php:23
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: templates/comments.php:31
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/searchform.php:5
+msgid "Search for"
 msgstr ""
